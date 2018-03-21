@@ -1,6 +1,6 @@
 # Pdf
 
-Plugin do Pdf Report/Document para Cakephp apps
+Plugin do Make Pdf para Cakephp Apps
 
 ## Instalação
 
