@@ -11,7 +11,7 @@ cd ~/cake/plugins
 git clone git@github.com:aelian-repo/Pdf.git Pdf
 ```
 
-Clone o projeto (make-pdf)[https://github.com/aelian-repo/make-pdf] na pasta *Vendor* do plugin:
+Clone o projeto [make-pdf](https://github.com/aelian-repo/make-pdf) na pasta *Vendor* do plugin:
 
 ```
 cd ~/cake/plugins/Pdf/Vendor
