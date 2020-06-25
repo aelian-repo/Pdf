@@ -4,49 +4,63 @@ Plugin do Make Pdf para Cakephp Apps
 
 ## Instalação
 
-Clone o projeto na pasta /cake/plugins
+Clone o projeto na pasta /[APP_DIR]/plugins e faça o checkout do branch `Cake4`
 
 ```
-cd ~/cake/plugins
+cd ~/[APP_DIR]/plugins
 git clone git@github.com:aelian-repo/Pdf.git Pdf
+git checkout Cake4
 ```
 
-Clone o projeto [make-pdf](https://github.com/aelian-repo/make-pdf) na pasta *Vendor* do plugin:
+Adicione o Pdf Plugin e o MakePdf no `composer.json` do app
 
 ```
-cd ~/cake/plugins/Pdf/Vendor
-git clone git@github.com:aelian-repo/make-pdf.git make-pdf
+"require": {
+    "aelian/make-pdf": "dev-master"
+},
+"autoload": {
+    "psr-4": {
+        "Pdf\\": "plugins/Pdf/src/",
+        "Pdf\\MakePdf\\": "vendor/aelian/make-pdf/lib/"
+    }
+},
+"autoload-dev": {
+    "psr-4": {
+        "Pdf\\Test\\": "plugins/Pdf/tests/"
+    }
+}
+```
+
+Execute o composer
+
+```
+php composer.phar dump-autoload
+```
+
+Carregue o plugin no método `bootstrap()` do `Application.php` do app:
+
+```
+$this->addPlugin('Pdf');
 ```
 
 ## Como funciona
 
-Carregue o plugin no bootstrap.php do app:
+Declare o Report e o Document no `initiazile()` do `AppController`:
 
 ```
-CakePlugin::loadAll(array(
-    'Pdf' => array('bootstrap' => true)
-));
+$this->viewBuilder()->setHelpers(['Pdf.Report']);        
+$this->viewBuilder()->setHelpers(['Pdf.Document']);        
 ```
 
-Declare o Report e o Document no AppController:
+Execute a impressão no arquivo de template:
 
 ```
-public $helpers = array(
-    'Pdf.Document',
-    'Pdf.Report', 
-);  
-```
-
-Execute a impressão no arquivo .ctp:
-
-```
-$settings = array(
+//exemplo:
+$settings = [
     'orientation' => 'P',
     'templateFile' => 'template.xml',
     'records' => $records
-);
+];
 
 $this->Report->create($settings);
 ```
-
-
