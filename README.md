@@ -45,7 +45,7 @@ $this->addPlugin('Pdf');
 
 ## Como funciona
 
-Declare o Report e o Document no `initiazile()` do `AppController`:
+Declare o Report e o Document no `initialize()` do `AppController`:
 
 ```
 $this->viewBuilder()->setHelpers(['Pdf.Report']);        
