@@ -4,15 +4,14 @@ Plugin do Make Pdf para Cakephp Apps
 
 ## Instalação
 
-Clone o projeto na pasta /[APP_DIR]/plugins e faça o checkout do branch `Cake4`
+Clone o projeto na pasta /[APP_DIR]/plugins e faça o checkout do branch `Cake4`:
 
 ```
-cd ~/[APP_DIR]/plugins
 git clone git@github.com:aelian-repo/Pdf.git Pdf
 git checkout Cake4
 ```
 
-Adicione o Pdf Plugin e o MakePdf no `composer.json` do app
+Adicione o Pdf Plugin e o MakePdf no `composer.json` do app:
 
 ```
 "require": {
@@ -31,7 +30,7 @@ Adicione o Pdf Plugin e o MakePdf no `composer.json` do app
 }
 ```
 
-Execute o composer
+Execute o composer na pasta do app:
 
 ```
 php composer.phar dump-autoload
