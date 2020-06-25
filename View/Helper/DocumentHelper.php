@@ -1,6 +1,8 @@
 <?php 
 App::uses('AppHelper', 'View/Helper');
 
+use Pdf\MakePdf\PdfDocument;
+
 class DocumentHelper extends AppHelper {
     
     public function __construct(View $view, $settings = array()) {
