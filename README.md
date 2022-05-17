@@ -11,11 +11,11 @@ cd ~/cake/plugins
 git clone git@github.com:aelian-repo/Pdf.git Pdf
 ```
 
-Clone o projeto [make-pdf](https://github.com/aelian-repo/make-pdf) na pasta *Vendor* do plugin:
+Instalar o [make-pdf](https://github.com/aelian-repo/make-pdf) através do composer
 
 ```
-cd ~/cake/plugins/Pdf/Vendor
-git clone git@github.com:aelian-repo/make-pdf.git make-pdf
+cd ~/cake/plugins/Pdf
+composer update
 ```
 
 ## Como funciona
