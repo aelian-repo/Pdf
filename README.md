@@ -20,7 +20,7 @@ Adicione o Pdf Plugin e o MakePdf no `composer.json` do app:
 "autoload": {
     "psr-4": {
         "Pdf\\": "plugins/Pdf/src/",
-        "Pdf\\MakePdf\\": "vendor/aelian/make-pdf/lib/"
+        "Pdf\\MakePdf\\": "vendor/aelian/make-pdf/src/"
     }
 },
 "autoload-dev": {
@@ -33,7 +33,7 @@ Adicione o Pdf Plugin e o MakePdf no `composer.json` do app:
 Execute o composer na pasta do app:
 
 ```
-php composer.phar dump-autoload
+php composer.phar update
 ```
 
 Carregue o plugin no método `bootstrap()` do `Application.php` do app:
