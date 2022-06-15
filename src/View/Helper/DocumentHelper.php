@@ -5,7 +5,7 @@ namespace Pdf\View\Helper;
 
 use Cake\View\Helper;
 use Cake\View\View;
-use Pdf\Vendor\MakePdf;
+use Pdf\MakePdf\PdfDocument;
 
 /**
  * Document helper
@@ -24,6 +24,6 @@ class DocumentHelper extends Helper
         $this->Pdf = new PdfDocument();
 
         return $this->Pdf->create($settings);
-    }    
+    }
 
 }
